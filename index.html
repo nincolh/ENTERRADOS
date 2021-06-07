@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Enterrados</title>
+    <script src=" https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>                                                                                                 
+    <script src="https://unpkg.com/super-hands@2.0.2/dist/super-hands.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+</head>
+
+<div>
+    <a-scene physics="gravity: 0; ">
+        <a-entity id="rig" movement-controls kinematic-body position="2.192 1.6 2">
+            <a-entity id="camera" camera position="0 2 0" camera rotation ="0 0 0"  look-controls  cursor="rayOrigin: mouse"></a-entity>
+          </a-entity>
+    <!-- <a-entity environment="active:true;seed:26;skyType:gradient;skyColor:#A3E8DC;horizonColor:#07627C;lightPosition:0 1.65 -1;fog:0.54;groundYScale:5;groundTexture:walkernoise;groundColor:#0E0402;groundColor2:#0F0301;dressing:none;dressingColor:#7c5c45;dressingVariance:20 20 20;grid:spots;gridColor:#e4b676;preset:egypt" preset-switcher="" id="environment"><a-entity class="environment" position="0 50 0" light="color:#8aa8a0;groundColor:#664735;intensity:0.6;type:hemisphere"></a-entity><a-entity class="environment" position="0 1.65 -1" light="shadowCameraLeft:-10;shadowCameraBottom:-10;shadowCameraRight:10;shadowCameraTop:10;intensity:0.6"></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" scale="1 1 5" shadow="cast:false;receive:false"></a-entity><a-entity class="environmentDressing environment"></a-entity><a-sky radius="200" theta-length="110" class="environment" geometry="" material="npot:false;shader:gradientshader;topColor:#155142;bottomColor:#e4b676"></a-sky><a-entity id="stars" visible="false"></a-entity></a-entity> -->
+<a-assets>
+    <a-asset-item id="jimmypapitt" src="./jimmypapitt.gltf" ></a-asset-item>
+
+              
+   
+
+    <a-asset-item id="linkpagina" src="./linkpagina.gltf" ></a-asset-item>
+    </a-assets>
+    <a-entity  position="22.926 32.258 11.893" scale= "15.480 -4.260 16.504"   ></a-entity>       
+    <a-gltf-model     navigate-on-click="url: https://www.artesplasticas.unbosque.edu.co/jimmy-vanegas" src="#linkpagina" position="22.926 32.258 11.893" scale= "15.480 -4.260 16.504" ></a-gltf-model>
+
+    <a-sound src="src: url(./Gotita.mp3)" loop= "true" autoplay="true" volume="100" position="1 3.554834 -3"> </a-sound>
+
+ <a-gltf-model src="#jimmypapitt" position="19.620 -2.162 -37.350" scale="13.55 7.71 -12.82" static-body="shape= jimmypapitt.gltf" gltf-model="./jimmypapitt.gltf"></a-gltf-model>
+    <a-plane static-body scale="0.263 1.770 0" width="30" height="30"
+    rotation="0 -90.00021045914971 90.00021045914971" position="9.949 2.949 -5.607"
+    material="opacity: 0; transparent: true"></a-plane>
+
+
+    <a-plane static-body scale="0.263 1.77 0.00001" width="30" height="30" rotation="0 -90.00021045914971 90.00021045914971" position="-7.14776 2.949 -5.98448" material="opacity: 0; transparent: true; side: double" ></a-plane>
+
+    <a-plane static-body scale="0.263 2.949 4.729" width="30" height="30" rotation="0 0 90.00021045914971" position="-7.14776 2.949 4.349" material="opacity: 0; transparent: true; side: double" ></a-plane>
+
+    <a-plane static-body scale="0.263 2.949 4.729" width="30" height="30" rotation="0 0 90.00021045914971" position="-7.14776 2.949 4.349" material="opacity: 0; transparent: true; side: double" ></a-plane>
+    <a-plane static-body scale="0.263 2.949 4.729" width="30" height="30" rotation="0 0 90.00021045914971" position="-7.14776 2.949 -28.580" material="opacity: 0; transparent: true; side: double" ></a-plane>
+    
+ 
+    <script> 
+    AFRAME.registerComponent('navigate-on-click', {
+        schema: {
+            url: { default: '' }
+        },
+  
+        init: function () {
+            var data = this.data;
+            var el = this.el;
+  
+            el.addEventListener('click', function () {
+                window.location.href = data.url;
+            });
+        }
+    });        
+</script>
+
+</a-scene>
+</div>
+
+
+
+</body>
+
+</html>
